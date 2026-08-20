@@ -28,10 +28,11 @@ fi
 # brew bywa poza PATH w świeżej powłoce
 command -v brew >/dev/null 2>&1 || eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null || /usr/local/bin/brew shellenv)"
 
-krok "Narzędzia: git, gh, node (+ Fork, Ente Auth)"
+krok "Narzędzia: git, gh, node (+ Fork, Ente Auth, Bitwarden)"
 brew install git gh node
 brew install --cask fork || echo "(Fork nie wszedł — nieblokujące, doinstalujesz później)"
 brew install --cask ente-auth || echo "(Ente Auth nie wszedł — nieblokujące, doinstalujesz później)"
+brew install --cask bitwarden || echo "(Bitwarden nie wszedł — nieblokujące, doinstalujesz później)"
 [ "$CODEX" = 1 ] && brew install codex
 [ "$WISPR" = 1 ] && brew install --cask wispr-flow
 

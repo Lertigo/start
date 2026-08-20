@@ -17,12 +17,13 @@ function Zainstaluj($id) {
   }
 }
 
-Krok "Narzędzia: Git, gh, Node (+ Fork, Ente Auth)"
+Krok "Narzędzia: Git, gh, Node (+ Fork, Ente Auth, Bitwarden)"
 Zainstaluj Git.Git
 Zainstaluj GitHub.cli
 Zainstaluj OpenJS.NodeJS.LTS
 try { Zainstaluj Fork.Fork } catch { Write-Host "(Fork nie wszedł — nieblokujące)" }
 try { Zainstaluj ente-io.auth-desktop } catch { Write-Host "(Ente Auth nie wszedł — nieblokujące)" }
+try { Zainstaluj Bitwarden.Bitwarden } catch { Write-Host "(Bitwarden nie wszedł — nieblokujące)" }
 if ($env:LERTIGO_CODEX -eq '1') { npm i -g @openai/codex }
 
 # Wispr Flow (dyktowanie głosem) nie ma pakietu w katalogu winget-pkgs
