@@ -2,6 +2,7 @@
 #
 #   irm https://raw.githubusercontent.com/Lertigo/start/main/win.ps1 | iex
 #   $env:LERTIGO_CODEX='1'; irm https://raw.githubusercontent.com/Lertigo/start/main/win.ps1 | iex   # dodatkowo Codex
+#   $env:LERTIGO_WISPR='1'; irm https://raw.githubusercontent.com/Lertigo/start/main/win.ps1 | iex   # dodatkowo Wispr Flow
 #
 # Idempotentny: dostawia tylko brakujące. Uruchamiaj w PowerShellu (prompt "PS C:\...").
 $ErrorActionPreference = 'Stop'
@@ -22,6 +23,12 @@ Zainstaluj GitHub.cli
 Zainstaluj OpenJS.NodeJS.LTS
 try { Zainstaluj Fork.Fork } catch { Write-Host "(Fork nie wszedł — nieblokujące)" }
 if ($env:LERTIGO_CODEX -eq '1') { npm i -g @openai/codex }
+
+# Wispr Flow (dyktowanie głosem) nie ma pakietu w katalogu winget-pkgs
+# (sprawdzone 20.08.2026), więc na Windowsie zostaje pobranie ze strony.
+if ($env:LERTIGO_WISPR -eq '1') {
+  Write-Host "Wispr Flow: pobierz z https://wisprflow.ai/get-started (winget nie ma tego pakietu)" -ForegroundColor Yellow
+}
 
 Krok "Claude Code"
 if (-not (Get-Command claude -ErrorAction SilentlyContinue)) {

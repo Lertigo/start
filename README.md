@@ -33,6 +33,9 @@ irm https://raw.githubusercontent.com/Lertigo/start/main/win.ps1 | iex
   przy pierwszym starcie Claude Code,
 - na macOS: hasło do komputera, gdy Homebrew o nie poprosi.
 
+Dyktujesz do agenta zamiast pisać? Wispr Flow dochodzi flagą `--wispr`
+(macOS: instaluje się sam; Windows: skrypt poda adres, bo winget nie ma pakietu).
+
 Używasz też Codexa? Dołóż go od razu:
 
 ```bash

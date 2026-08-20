@@ -3,12 +3,21 @@
 #
 #   curl -fsSL https://raw.githubusercontent.com/Lertigo/start/main/mac.sh | bash
 #   ... | bash -s -- --codex     # dodatkowo Codex
+#   ... | bash -s -- --wispr     # dodatkowo Wispr Flow (dyktowanie głosem)
+#
+# Flagi można łączyć: bash -s -- --codex --wispr
 #
 # Idempotentny: na maszynie, która ma już część narzędzi, dostawia brakujące.
 set -e
 
 CODEX=0
-for a in "$@"; do [ "$a" = "--codex" ] && CODEX=1; done
+WISPR=0
+for a in "$@"; do
+  case "$a" in
+    --codex) CODEX=1 ;;
+    --wispr) WISPR=1 ;;
+  esac
+done
 
 krok() { printf '\n\033[1m== %s\033[0m\n' "$1"; }
 
@@ -23,6 +32,7 @@ krok "Narzędzia: git, gh, node (+ Fork)"
 brew install git gh node
 brew install --cask fork || echo "(Fork nie wszedł — nieblokujące, doinstalujesz później)"
 [ "$CODEX" = 1 ] && brew install codex
+[ "$WISPR" = 1 ] && brew install --cask wispr-flow
 
 krok "Claude Code"
 if ! command -v claude >/dev/null 2>&1; then
