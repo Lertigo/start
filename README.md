@@ -1,9 +1,9 @@
 # start
 
 Jedna linia stawia środowisko członka zespołu Lertigo: narzędzia (git, gh, Node,
-Fork), Claude Code, logowanie do GitHuba, a na końcu otwiera Claude Code z
-promptem onboardingu — dalej prowadzi agent (pluginy standardu, warstwa
-osobista, zasady pracy).
+Fork, Ente Auth na kody 2FA), Claude Code, logowanie do GitHuba, a na końcu
+otwiera Claude Code z promptem onboardingu — dalej prowadzi agent (pluginy
+standardu, warstwa osobista, zasady pracy).
 
 To repo jest publiczne, bo uruchamiasz je ZANIM zalogujesz się do GitHuba.
 Nie ma tu nic firmowego: właściwa treść (kanon `claude-standard`, szablon
