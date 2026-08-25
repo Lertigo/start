@@ -46,6 +46,11 @@ fi
 export PATH="$HOME/.local/bin:$PATH"
 claude --version
 
+krok "Aplikacja Claude (okno zamiast terminala)"
+# Ta sama konfiguracja co CLI (~/.claude), wiec pluginy standardu dzialaja
+# tez w zakladce Code. Cask `claude` to aplikacja, `claude-code` to samo CLI.
+brew install --cask claude || echo "(Aplikacja Claude nie weszla, nieblokujace: pobierzesz z https://claude.com/download)"
+
 krok "Logowanie do GitHuba"
 if ! gh auth status >/dev/null 2>&1; then
   gh auth login --hostname github.com --git-protocol https --web

@@ -50,6 +50,11 @@ $env:Path = [Environment]::GetEnvironmentVariable('Path','Machine') + ';' +
             [Environment]::GetEnvironmentVariable('Path','User')
 claude --version
 
+Krok "Aplikacja Claude (okno zamiast terminala)"
+# Ta sama konfiguracja co CLI (~\.claude), wiec pluginy standardu dzialaja
+# tez w zakladce Code. Anthropic.Claude to aplikacja, Anthropic.ClaudeCode to CLI.
+try { Zainstaluj Anthropic.Claude } catch { Write-Host "(Aplikacja Claude nie weszla, nieblokujace: pobierzesz z https://claude.com/download)" }
+
 Krok "Logowanie do GitHuba"
 gh auth status 2>$null
 if ($LASTEXITCODE -ne 0) { gh auth login --hostname github.com --git-protocol https --web }

@@ -2,7 +2,7 @@
 
 Jedna linia stawia środowisko członka zespołu Lertigo: narzędzia (git, gh, Node,
 Fork, Ente Auth na kody 2FA, Bitwarden z CLI, Obsidian, Telegram, Discord),
-Claude Code, logowanie do GitHuba, a na
+Claude Code w terminalu i jako aplikacja, logowanie do GitHuba, a na
 końcu otwiera Claude Code z promptem onboardingu — dalej prowadzi agent (pluginy
 standardu, warstwa osobista, zasady pracy).
 
